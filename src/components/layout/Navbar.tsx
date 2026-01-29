@@ -23,13 +23,13 @@ export default function Navbar() {
                 <Link href="/" className={styles.logo}>
                     <Image
                         src="/Logo.png"
-                        alt="Wallnetix Logo"
+                        alt="Walnetix Logo"
                         width={140}
                         height={40}
                         priority
                         style={{ height: 'auto', width: 'auto', maxHeight: '40px' }}
                     />
-                    <span className={styles.logoText}>Wallnetix</span>
+                    <span className={styles.logoText}>Walnetix</span>
                 </Link>
 
                 {/* Desktop Menu */}

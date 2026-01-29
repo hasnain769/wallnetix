@@ -1,8 +1,8 @@
 import SuccessCard from '@/components/case-studies/SuccessCard';
 
 export const metadata = {
-    title: 'Success Stories - Wallnetix',
-    description: 'See how Saudi SMEs are growing with Wallnetix automation.',
+    title: 'Success Stories - Walnetix',
+    description: 'See how Saudi SMEs are growing with Walnetix automation.',
 };
 
 export default function CaseStudies() {
@@ -11,7 +11,7 @@ export default function CaseStudies() {
             businessType: 'Local Dental Clinic',
             location: 'Riyadh',
             problem: 'Receptionist was overwhelmed with calls and missed 30% of new patient inquiries.',
-            solution: 'Wallnetix installed a WhatsApp auto-booking agent.',
+            solution: 'Walnetix installed a WhatsApp auto-booking agent.',
             result: 'Missed calls dropped to zero. Bookings increased by 40% in the first month.'
         },
         {

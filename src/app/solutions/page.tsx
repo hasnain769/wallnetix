@@ -1,7 +1,7 @@
 import ProductBlock from '@/components/solutions/ProductBlock';
 
 export const metadata = {
-    title: 'Solutions - Wallnetix',
+    title: 'Solutions - Walnetix',
     description: 'Practical tools for Saudi businesses: WhatsApp Booking, Customer Organization, and Inventory Sync.',
 };
 

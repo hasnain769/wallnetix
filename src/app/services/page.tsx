@@ -1,7 +1,7 @@
 import ServicesSection from '@/components/services/ServicesSection';
 
 export const metadata = {
-    title: 'Services - Wallnetix',
+    title: 'Services - Walnetix',
     description: 'AI Strategy, Automation, SEO, and more.',
 };
 

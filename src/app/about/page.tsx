@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Button from '@/components/common/Button';
 
 export const metadata = {
-    title: 'About Us - Wallnetix',
+    title: 'About Us - Walnetix',
     description: 'Helping Saudi SMEs Thrive in Vision 2030.',
 };
 
@@ -33,7 +33,7 @@ export default function About() {
                         Running a business is hard. Between managing customers, tracking orders, and handling finances, there’s barely any time left to actually grow.
                     </p>
                     <p style={{ marginBottom: '24px' }}>
-                        <strong>Wallnetix exists to change that.</strong>
+                        <strong>Walnetix exists to change that.</strong>
                     </p>
                     <p style={{ marginBottom: '24px' }}>
                         We bring powerful, easy-to-use technology to local clinics, retailers, and service providers. Our mission is to handle the busy work—like answering missed calls or updating inventory—so you can focus on what you do best.

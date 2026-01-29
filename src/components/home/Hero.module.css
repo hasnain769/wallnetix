@@ -1,93 +1,261 @@
 .hero {
-    padding: 60px 0 80px;
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
-    background: linear-gradient(to bottom, #FFFFFF, var(--color-bg-secondary));
+    background: radial-gradient(circle at top right, var(--color-bg-secondary), #FFFFFF 60%);
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
 }
 
-.container {
-    max-width: 1200px;
+/* Main container - fixed grid, no layout changes during animation */
+.heroInner {
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+    position: relative;
     align-items: center;
 }
 
+/* Text content - slides right and fades behind video */
 .content {
-    max-width: 600px;
+    z-index: 5;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(0);
+    opacity: 1;
+    will-change: transform, opacity;
 }
 
+/* On mobile/tablet: contentHidden has no animation effect */
+.contentHidden {
+    pointer-events: none;
+}
+
+/* Fluid typography */
 .headline {
-    font-size: 2.5rem;
-    margin-bottom: 24px;
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    margin-bottom: clamp(16px, 3vw, 24px);
     color: var(--color-text);
-    letter-spacing: -1px;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    line-height: 1.1;
 }
 
 .highlight {
-    color: var(--color-primary);
+    color: var(--color-brand-cyan);
 }
 
 .subheadline {
-    font-size: 1.125rem;
+    font-size: clamp(0.95rem, 1.5vw + 0.5rem, 1.25rem);
     color: var(--color-text-light);
-    margin-bottom: 32px;
+    margin-bottom: clamp(20px, 4vw, 32px);
     line-height: 1.6;
+    max-width: 540px;
 }
 
 .actions {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: clamp(8px, 2vw, 24px);
 }
 
 .trustText {
-    font-size: 0.875rem;
-    color: #718096;
-    margin-top: 16px;
+    font-size: clamp(0.75rem, 1vw + 0.5rem, 0.875rem);
+    color: var(--color-text-light);
     font-weight: 500;
 }
 
-.visual {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.imageWrapper {
+/* Media container - expands left using transform */
+.mediaContainer {
     position: relative;
     width: 100%;
     max-width: 500px;
+    aspect-ratio: 16 / 9;
     border-radius: var(--radius-lg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    background-color: white;
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    background-color: #0a0a0a;
+    z-index: 10;
+    justify-self: center;
+
+    /* Transform-based animation - GPU accelerated */
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 1s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(0) scale(1);
+    transform-origin: center center;
+    will-change: transform;
 }
 
-.image {
+/* Expanded state - on mobile/tablet just z-index, transforms added in desktop */
+.mediaExpanded {
+    z-index: 100;
+}
+
+.heroImage {
+    object-fit: cover;
+    transition: opacity 0.6s ease;
+}
+
+.heroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease;
 }
 
-@media (min-width: 768px) {
+.heroImage.hidden {
+    opacity: 0;
+}
+
+.heroVideo.visible {
+    opacity: 1;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.scrollIndicator span {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.scrollArrow {
+    font-size: 1.25rem;
+    color: var(--color-brand-cyan);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+/* ========================================
+   TABLET (640px - 1024px)
+   ======================================== */
+@media (min-width: 640px) {
     .hero {
-        padding: 100px 0 120px;
+        padding: 0 6%;
     }
 
-    .container {
+    .heroInner {
         grid-template-columns: 1fr 1fr;
-        gap: 60px;
+        gap: 40px;
     }
 
-    .headline {
-        font-size: 3.5rem;
+    .mediaContainer {
+        max-width: 100%;
+        justify-self: end;
+    }
+
+    .scrollIndicator {
+        bottom: 40px;
+    }
+}
+
+/* ========================================
+   DESKTOP (1024px+) - Full animation
+   ======================================== */
+@media (min-width: 1024px) {
+    .hero {
+        padding: 0 8%;
+    }
+
+    .heroInner {
+        grid-template-columns: 45% 55%;
+        gap: 40px;
+    }
+
+    .subheadline {
+        max-width: 480px;
+    }
+
+    /* Premium animation - text slides right behind video */
+    .contentHidden {
+        transform: translateX(250px);
+        opacity: 0;
+    }
+
+    /* Video expands and centers */
+    .mediaExpanded {
+        transform: translateX(-55%) scale(1.5);
+        transform-origin: center center;
+        z-index: 100;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35),
+            0 0 60px rgba(0, 179, 152, 0.15);
+    }
+}
+
+/* ========================================
+   LARGE DESKTOP (1400px+)
+   ======================================== */
+@media (min-width: 1400px) {
+    .hero {
+        padding: 0 10%;
+    }
+
+    .heroInner {
+        gap: 80px;
+    }
+
+    .mediaExpanded {
+        transform: translateX(-50%) scale(1.4);
+    }
+}
+
+/* ========================================
+   SMALL MOBILE (<400px)
+   ======================================== */
+@media (max-width: 400px) {
+    .hero {
+        padding: 0 4%;
     }
 
     .actions {
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .actions>* {
+        width: 100%;
+    }
+
+    .scrollIndicator {
+        bottom: 20px;
     }
 }

@@ -11,12 +11,12 @@ export default function Footer() {
                         <div className={styles.logoWrapper}>
                             <Image
                                 src="/Logo.png"
-                                alt="Wallnetix Logo"
+                                alt="Walnetix Logo"
                                 width={120}
                                 height={35}
                                 style={{ height: 'auto', width: 'auto' }}
                             />
-                            <span className={styles.brandName}>Wallnetix</span>
+                            <span className={styles.brandName}>Walnetix</span>
                         </div>
                         <p>Empowering Saudi SMEs with automation.</p>
                     </div>
@@ -28,7 +28,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={styles.copyright}>
-                    <p>© {new Date().getFullYear()} Wallnetix. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Walnetix. All rights reserved.</p>
                 </div>
             </div>
         </footer>

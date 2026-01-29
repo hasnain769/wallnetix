@@ -1,7 +1,7 @@
 import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata = {
-    title: 'Contact Us - Wallnetix',
+    title: 'Contact Us - Walnetix',
     description: 'Get a free consultation to automate your Saudi business.',
 };
 
