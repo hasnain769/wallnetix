@@ -1,0 +1,44 @@
+.card {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    border-color: var(--color-brand-green);
+}
+
+.iconWrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background-color: rgba(1, 134, 117, 0.1);
+    /* Brand Green light #018675 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.icon {
+    color: var(--color-brand-green);
+}
+
+.title {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.description {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}

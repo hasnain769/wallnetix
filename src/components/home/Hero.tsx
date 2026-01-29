@@ -12,7 +12,7 @@ export default function Hero() {
                         <span className={styles.highlight}>24/7.</span>
                     </h1>
                     <p className={styles.subheadline}>
-                        The all-in-one automation tool for Saudi SMEs. Handle bookings, inventory, and customer chats automatically—without lifting a finger.
+                        The leading software development company for Saudi SMEs. We build intelligent systems to handle bookings, inventory, and customer chats automatically.
                     </p>
                     <div className={styles.actions}>
                         <Button href="/contact" variant="primary" icon>

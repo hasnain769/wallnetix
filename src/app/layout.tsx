@@ -7,8 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Wallnetix - SME Marketing",
-  description: "Automate Your Busy Work. Grow Your Saudi Business.",
+  title: "Wallnetix - AI LABs",
+  description: "Automate Your Busy Work. Grow Your Business.",
 };
 
 export default function RootLayout({
