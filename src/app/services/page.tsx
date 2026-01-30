@@ -1,4 +1,6 @@
+import ServicesHero from '@/components/services/ServicesHero';
 import ServicesSection from '@/components/services/ServicesSection';
+import styles from './services.module.css';
 
 export const metadata = {
     title: 'Services - Walnetix',
@@ -7,19 +9,8 @@ export const metadata = {
 
 export default function ServicesPage() {
     return (
-        <main>
-            <div style={{
-                backgroundColor: 'var(--color-bg-secondary)',
-                padding: '80px 20px',
-                textAlign: 'center'
-            }}>
-                <h1 style={{ fontSize: '3rem', marginBottom: '16px', color: 'var(--color-text)' }}>
-                    Our Services
-                </h1>
-                <p style={{ fontSize: '1.2rem', color: 'var(--color-text-light)' }}>
-                    Transforming businesses with intelligent technology and strategic growth.
-                </p>
-            </div>
+        <main className={styles.main}>
+            <ServicesHero />
             <ServicesSection showTitle={false} />
         </main>
     );

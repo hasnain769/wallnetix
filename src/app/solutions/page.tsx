@@ -1,4 +1,6 @@
 import ProductBlock from '@/components/solutions/ProductBlock';
+import SolutionsHero from '@/components/solutions/SolutionsHero';
+import styles from './solutions.module.css';
 
 export const metadata = {
     title: 'Solutions - Walnetix',
@@ -29,20 +31,13 @@ export default function Solutions() {
     ];
 
     return (
-        <main style={{ padding: '60px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-            <h1 style={{
-                textAlign: 'center',
-                fontSize: '2.5rem',
-                marginBottom: '60px',
-                color: 'var(--color-text)'
-            }}>
-                Practical Solutions for Local Businesses
-            </h1>
-            <div>
+        <main className={styles.main}>
+            <SolutionsHero />
+            <section className={styles.solutions}>
                 {solutions.map((solution, index) => (
-                    <ProductBlock key={index} {...solution} />
+                    <ProductBlock key={index} {...solution} index={index} />
                 ))}
-            </div>
+            </section>
         </main>
     );
 }

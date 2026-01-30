@@ -1,0 +1,141 @@
+.hero {
+    position: relative;
+    padding: 140px 20px 100px;
+    text-align: center;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+}
+
+/* Animated grid background */
+.background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 60px 60px;
+    }
+}
+
+.gradientOverlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center top, transparent 0%, var(--color-bg-secondary) 70%);
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Badge */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.visible .badge {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.badgeDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-brand-cyan);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.title {
+    font-size: clamp(2.5rem, 6vw + 1rem, 4rem);
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+}
+
+.visible .title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.highlight {
+    background: linear-gradient(135deg, var(--color-brand-cyan) 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    max-width: 550px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+}
+
+.visible .subtitle {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .hero {
+        padding: 180px 40px 120px;
+    }
+}

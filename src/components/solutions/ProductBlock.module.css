@@ -4,6 +4,11 @@
     gap: 48px;
     align-items: center;
     padding: 60px 0;
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
 }
 
 .reversed {
@@ -14,10 +19,23 @@
     direction: ltr;
 }
 
+/* Content animations */
 .content {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reversed .content {
+    transform: translateX(60px);
+}
+
+.contentVisible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .title {
@@ -35,9 +53,33 @@
     max-width: 500px;
 }
 
+.buttonWrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+.contentVisible .buttonWrapper {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Visual animations */
 .visual {
     display: flex;
     justify-content: center;
+    opacity: 0;
+    transform: translateX(60px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.reversed .visual {
+    transform: translateX(-60px) scale(0.95);
+}
+
+.visualVisible {
+    opacity: 1;
+    transform: translateX(0) scale(1);
 }
 
 .imageWrapper {
@@ -48,19 +90,33 @@
     overflow: hidden;
     box-shadow: var(--shadow-lg), var(--shadow-glow);
     background-color: white;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .imageWrapper:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px) scale(1.02) rotateX(2deg) rotateY(-2deg);
+    box-shadow:
+        var(--shadow-lg),
+        0 0 40px rgba(0, 179, 152, 0.2),
+        0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.reversed .imageWrapper:hover {
+    transform: translateY(-8px) scale(1.02) rotateX(2deg) rotateY(2deg);
 }
 
 .image {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.imageWrapper:hover .image {
+    transform: scale(1.05);
+}
+
+/* Desktop breakpoint */
 @media (min-width: 768px) {
     .block {
         grid-template-columns: 1fr 1fr;
@@ -71,4 +127,21 @@
     .title {
         font-size: 2.75rem;
     }
+}
+
+/* Add subtle line decoration */
+.block::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--color-brand-cyan), transparent);
+    opacity: 0;
+    transition: opacity 0.6s ease 0.5s;
+}
+
+.visible::before {
+    opacity: 0.3;
 }

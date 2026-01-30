@@ -1,3 +1,4 @@
+"use client";
 import { Lightbulb, Cpu, Handshake, TrendingUp, Share2, BarChart3 } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import styles from './ServicesSection.module.css';
@@ -20,7 +21,7 @@ export default function ServicesSection({ showTitle = true }: { showTitle?: bool
             description: 'Receive continuous support and system refinement to keep your AI tools performing at their best.'
         },
         {
-            icon: TrendingUp, // Using TrendingUp for SEO/Marketing as requested
+            icon: TrendingUp,
             title: 'SEO & Digital Marketing',
             description: 'Boost your online visibility and drive organic traffic with data-driven SEO strategies and targeted digital campaigns.'
         },
@@ -41,13 +42,15 @@ export default function ServicesSection({ showTitle = true }: { showTitle?: bool
             <div className={styles.container}>
                 {showTitle && (
                     <div className={styles.header}>
-                        <h2 className={styles.headline}>Our Services</h2>
+                        <h2 className={styles.headline}>
+                            Our <span className={styles.highlight}>Services</span>
+                        </h2>
                         <p className={styles.subheadline}>Comprehensive AI and digital solutions to power your growth.</p>
                     </div>
                 )}
                 <div className={styles.grid}>
                     {services.map((service, index) => (
-                        <ServiceCard key={index} {...service} />
+                        <ServiceCard key={index} {...service} index={index} />
                     ))}
                 </div>
             </div>

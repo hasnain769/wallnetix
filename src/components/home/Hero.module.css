@@ -3,10 +3,94 @@
     min-height: 100vh;
     min-height: 100dvh;
     overflow: hidden;
-    background: radial-gradient(circle at top right, var(--color-bg-secondary), #FFFFFF 60%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
     display: flex;
     align-items: center;
     padding: 0 5%;
+}
+
+/* Animated background orbs */
+.background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shape1,
+.shape2,
+.shape3 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+}
+
+.shape1 {
+    top: -100px;
+    right: -50px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+    animation: float1 15s ease-in-out infinite;
+}
+
+.shape2 {
+    bottom: -150px;
+    left: -100px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(30, 64, 175, 0.1) 0%, transparent 70%);
+    animation: float2 20s ease-in-out infinite;
+}
+
+.shape3 {
+    top: 40%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-30px, 40px) scale(1.1);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(40px, -30px) scale(1.05);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.6;
+    }
 }
 
 /* Main container - fixed grid, no layout changes during animation */
@@ -47,7 +131,10 @@
 }
 
 .highlight {
-    color: var(--color-brand-cyan);
+    background: linear-gradient(135deg, var(--color-brand-cyan) 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .subheadline {

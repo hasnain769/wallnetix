@@ -24,7 +24,9 @@ export default function Benefits() {
         <section className={styles.benefits}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <h2 className={styles.headline}>Stop Wasting Time on Manual Tasks.</h2>
+                    <h2 className={styles.headline}>
+                        Stop Wasting Time on <span className={styles.highlight}>Manual Tasks.</span>
+                    </h2>
                     <p className={styles.subheadline}>Focus on growing your business, not admin work.</p>
                 </div>
                 <div className={styles.grid}>

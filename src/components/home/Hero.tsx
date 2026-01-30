@@ -84,6 +84,11 @@ export default function Hero() {
 
     return (
         <section ref={heroRef} className={styles.hero}>
+            <div className={styles.background}>
+                <div className={styles.shape1} />
+                <div className={styles.shape2} />
+                <div className={styles.shape3} />
+            </div>
             <div className={styles.heroInner}>
                 {/* Text content - only hides on large screens */}
                 <div className={`${styles.content} ${shouldHideContent ? styles.contentHidden : ''}`}>
