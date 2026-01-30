@@ -3,7 +3,9 @@
     padding: 120px 16px 80px;
     text-align: center;
     overflow: hidden;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    background: url('/images/about-hero-bg.jpg');
+    background-size: cover;
+    background-position: center center;
 }
 
 /* Animated background orbs */

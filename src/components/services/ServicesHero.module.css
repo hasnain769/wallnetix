@@ -3,7 +3,9 @@
     padding: 140px 20px 100px;
     text-align: center;
     overflow: hidden;
-    background: var(--color-bg-secondary);
+    background: url('/images/services-hero-bg.png');
+    background-size: cover;
+    background-position: center center;
 }
 
 /* Animated grid background */
