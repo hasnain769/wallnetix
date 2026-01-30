@@ -262,7 +262,7 @@
 
     .heroInner {
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        gap: 24px;
     }
 
     .mediaContainer {
@@ -285,7 +285,7 @@
 
     .heroInner {
         grid-template-columns: 45% 55%;
-        gap: 40px;
+        gap: 24px;
     }
 
     .subheadline {
@@ -317,7 +317,7 @@
     }
 
     .heroInner {
-        gap: 80px;
+        gap: 32px;
     }
 
     .mediaExpanded {

@@ -11,10 +11,10 @@ export default function Navbar() {
 
     const navLinks = [
         { name: 'Home', href: '/' },
+        { name: 'About', href: '/about' },
         { name: 'Services', href: '/services' },
         { name: 'Solutions', href: '/solutions' },
         { name: 'Case Studies', href: '/case-studies' },
-        { name: 'About', href: '/about' },
     ];
 
     return (
