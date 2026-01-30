@@ -1,11 +1,17 @@
+import { Metadata } from 'next';
 import ProductBlock from '@/components/solutions/ProductBlock';
 import SolutionsHero from '@/components/solutions/SolutionsHero';
+import StructuredData from '@/components/seo/StructuredData';
+import { generateMetadata, generateCanonicalUrl, siteConfig } from '@/lib/seo-config';
+import { generateProductSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
 import styles from './solutions.module.css';
 
-export const metadata = {
-    title: 'Solutions - Walnetix',
-    description: 'Practical tools for Saudi businesses: WhatsApp Booking, Customer Organization, and Inventory Sync.',
-};
+export const metadata: Metadata = generateMetadata({
+    title: 'Our Solutions',
+    description: 'Practical automation tools for Saudi businesses: WhatsApp Booking Bots, Customer Organization Systems, and Inventory Sync. Transform your operations today.',
+    keywords: ['WhatsApp booking bot Saudi', 'customer management Saudi', 'inventory sync Salla Zid', 'business automation tools'],
+    canonical: generateCanonicalUrl('/solutions'),
+});
 
 export default function Solutions() {
     const solutions = [
@@ -30,14 +36,37 @@ export default function Solutions() {
         },
     ];
 
+    const breadcrumbs = [
+        { name: 'Home', url: generateCanonicalUrl('/') },
+        { name: 'Solutions', url: generateCanonicalUrl('/solutions') },
+    ];
+
+    // Generate product schemas for each solution
+    const productSchemas = solutions.map(solution =>
+        generateProductSchema({
+            name: solution.title,
+            description: solution.description,
+            image: solution.imageSrc,
+            url: `${siteConfig.url}/solutions#${solution.title.toLowerCase().replace(/\s+/g, '-')}`,
+        })
+    );
+
     return (
-        <main className={styles.main}>
-            <SolutionsHero />
-            <section className={styles.solutions}>
-                {solutions.map((solution, index) => (
-                    <ProductBlock key={index} {...solution} index={index} />
-                ))}
-            </section>
-        </main>
+        <>
+            <StructuredData
+                data={[
+                    ...productSchemas,
+                    generateBreadcrumbSchema(breadcrumbs),
+                ]}
+            />
+            <main className={styles.main}>
+                <SolutionsHero />
+                <section className={styles.solutions}>
+                    {solutions.map((solution, index) => (
+                        <ProductBlock key={index} {...solution} index={index} />
+                    ))}
+                </section>
+            </main>
+        </>
     );
 }

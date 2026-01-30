@@ -1,7 +1,13 @@
 .section {
-    padding: 100px 20px;
+    padding: 60px 16px;
     background: linear-gradient(135deg, #F8FAFC 0%, white 100%);
     overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 100px 20px;
+    }
 }
 
 .container {
@@ -9,8 +15,9 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
     align-items: center;
+    overflow: hidden;
 }
 
 @media (min-width: 968px) {
@@ -21,25 +28,44 @@
 
 .content {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 968px) {
+    .content {
+        transform: translateX(-40px);
+    }
 }
 
 .content.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+}
+
+@media (min-width: 968px) {
+    .content.visible {
+        transform: translateX(0);
+    }
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
     color: var(--color-text);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     letter-spacing: -0.02em;
     background: linear-gradient(90deg, var(--color-brand-cyan), var(--color-primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 32px;
+    }
 }
 
 .text {
@@ -52,43 +78,76 @@
 /* Visual Side */
 .visual {
     position: relative;
-    height: 400px;
+    height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .visual {
+        height: 400px;
+    }
+}
+
+@media (min-width: 968px) {
+    .visual {
+        transform: translateX(40px);
+    }
 }
 
 .visual.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+}
+
+@media (min-width: 968px) {
+    .visual.visible {
+        transform: translateX(0);
+    }
 }
 
 .blob1 {
     position: absolute;
     top: 20%;
-    left: 10%;
-    width: 250px;
-    height: 250px;
+    left: 5%;
+    width: 100px;
+    height: 100px;
     background: var(--color-brand-cyan);
     border-radius: 50%;
-    filter: blur(60px);
+    filter: blur(40px);
     animation: floatBlob 10s infinite ease-in-out;
 }
 
 .blob2 {
     position: absolute;
     bottom: 20%;
-    right: 10%;
-    width: 300px;
-    height: 300px;
+    right: 5%;
+    width: 120px;
+    height: 120px;
     background: var(--color-primary);
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(50px);
     opacity: 0.6;
     animation: floatBlob 14s infinite ease-in-out reverse;
+}
+
+@media (min-width: 768px) {
+    .blob1 {
+        width: 250px;
+        height: 250px;
+        filter: blur(60px);
+    }
+
+    .blob2 {
+        width: 300px;
+        height: 300px;
+        filter: blur(80px);
+    }
 }
 
 @keyframes floatBlob {
@@ -109,12 +168,22 @@
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 24px;
-    padding: 40px;
+    border-radius: 20px;
+    padding: 24px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 24px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 480px) {
+    .glassCard {
+        flex-direction: row;
+        padding: 40px;
+        gap: 40px;
+        border-radius: 24px;
+    }
 }
 
 .statItem {
@@ -123,23 +192,42 @@
 
 .statValue {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--color-text);
     line-height: 1;
     margin-bottom: 8px;
 }
 
+@media (min-width: 768px) {
+    .statValue {
+        font-size: 2.5rem;
+    }
+}
+
 .statLabel {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--color-text-light);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
+@media (min-width: 768px) {
+    .statLabel {
+        font-size: 0.9rem;
+    }
+}
+
 .divider {
-    width: 1px;
-    height: 60px;
+    width: 60px;
+    height: 1px;
     background: rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 480px) {
+    .divider {
+        width: 1px;
+        height: 60px;
+    }
 }

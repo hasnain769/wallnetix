@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    padding: 160px 20px 120px;
+    padding: 120px 16px 80px;
     text-align: center;
     overflow: hidden;
     background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
@@ -157,6 +157,27 @@
 .visible .subtitle {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .shape1 {
+        width: 200px;
+        height: 200px;
+        top: -50px;
+        right: -30px;
+    }
+
+    .shape2 {
+        width: 250px;
+        height: 250px;
+        bottom: -80px;
+        left: -60px;
+    }
+
+    .shape3 {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @media (min-width: 768px) {

@@ -8,12 +8,20 @@ export default function Hero() {
     const [isAnimating, setIsAnimating] = useState(false);
     const [videoEnded, setVideoEnded] = useState(false);
     const [isLargeScreen, setIsLargeScreen] = useState(false);
+    const [hasMounted, setHasMounted] = useState(false);
     const heroRef = useRef<HTMLElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
     const hasTriggered = useRef(false);
 
-    // Detect screen size
+    // Mark as mounted after hydration
     useEffect(() => {
+        setHasMounted(true);
+    }, []);
+
+    // Detect screen size - only after mount to avoid hydration mismatch
+    useEffect(() => {
+        if (!hasMounted) return;
+
         const checkScreenSize = () => {
             setIsLargeScreen(window.innerWidth >= 1024);
         };
@@ -21,7 +29,7 @@ export default function Hero() {
         checkScreenSize();
         window.addEventListener('resize', checkScreenSize);
         return () => window.removeEventListener('resize', checkScreenSize);
-    }, []);
+    }, [hasMounted]);
 
     useEffect(() => {
         const handleWheel = (e: WheelEvent) => {
@@ -71,6 +79,59 @@ export default function Hero() {
 
         window.addEventListener('wheel', handleWheel, { passive: false });
         return () => window.removeEventListener('wheel', handleWheel);
+    }, [isAnimating, videoEnded, isLargeScreen]);
+
+    // Touch event handling for mobile
+    useEffect(() => {
+        let touchStartY = 0;
+
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartY = e.touches[0].clientY;
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            if (!heroRef.current) return;
+            const heroRect = heroRef.current.getBoundingClientRect();
+            const heroAtTop = heroRect.top > -100 && heroRect.top < 100;
+
+            const touchCurrentY = e.touches[0].clientY;
+            const deltaY = touchStartY - touchCurrentY; // Positive = scrolling down
+
+            if (heroAtTop && deltaY > 30 && !hasTriggered.current && !videoEnded) {
+                hasTriggered.current = true;
+                setIsAnimating(true);
+
+                if (videoRef.current) {
+                    videoRef.current.currentTime = 0;
+                    videoRef.current.play().catch(() => {
+                        // Autoplay blocked - still show animation
+                    });
+                }
+
+                setTimeout(() => {
+                    setVideoEnded(true);
+                }, isLargeScreen ? 1000 : 500);
+            }
+
+            // Scrolling UP - reverse
+            if (heroAtTop && deltaY < -30 && videoEnded) {
+                setIsAnimating(false);
+                setVideoEnded(false);
+                hasTriggered.current = false;
+                if (videoRef.current) {
+                    videoRef.current.pause();
+                    videoRef.current.currentTime = 0;
+                }
+            }
+        };
+
+        window.addEventListener('touchstart', handleTouchStart, { passive: true });
+        window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+        return () => {
+            window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchmove', handleTouchMove);
+        };
     }, [isAnimating, videoEnded, isLargeScreen]);
 
     const handleVideoEnded = () => {

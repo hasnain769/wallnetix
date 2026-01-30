@@ -1,8 +1,14 @@
 .section {
-    padding: 100px 20px;
+    padding: 60px 16px;
     background: #0f172a;
     /* Dark contrast section for "Lab" feel */
     color: white;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 100px 20px;
+    }
 }
 
 .container {
@@ -24,10 +30,16 @@
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
     margin-bottom: 16px;
     letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
 }
 
 .subtitle {
@@ -39,19 +51,32 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 640px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+    }
 }
 
 .card {
     background: rgba(255, 255, 255, 0.05);
     /* Glass dark */
-    padding: 40px 32px;
+    padding: 28px 24px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     opacity: 0;
     transform: translateY(30px);
+}
+
+@media (min-width: 768px) {
+    .card {
+        padding: 40px 32px;
+    }
 }
 
 .card.visible {
