@@ -25,7 +25,7 @@ export default function Navbar() {
                         src="/Logo.png"
                         alt="Walnetix"
                         width={180}
-                        height={42}
+                        height={45}
                         priority
                         style={{ height: 'auto', width: 'auto', maxHeight: '60px' }}
                     />
