@@ -29,7 +29,7 @@ export default function Navbar() {
                         priority
                         style={{ height: 'auto', width: 'auto', maxHeight: '60px' }}
                     />
-                    <span className={styles.logoText}>Walnetix</span>
+                    {/* <span className={styles.logoText}>Walnetix</span> */}
                 </Link>
 
                 {/* Desktop Menu */}
