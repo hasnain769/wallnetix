@@ -25,9 +25,9 @@ export default function Navbar() {
                         src="/Logo.png"
                         alt="Walnetix"
                         width={180}
-                        height={50}
+                        height={42}
                         priority
-                        style={{ height: 'auto', width: 'auto', maxHeight: '80px' }}
+                        style={{ height: 'auto', width: 'auto', maxHeight: '60px' }}
                     />
                     <span className={styles.logoText}>Walnetix</span>
                 </Link>
