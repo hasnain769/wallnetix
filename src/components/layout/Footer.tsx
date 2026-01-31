@@ -16,7 +16,7 @@ export default function Footer() {
                                 height={35}
                                 style={{ height: 'auto', width: 'auto' }}
                             />
-                            <span className={styles.brandName}>Walnetix</span>
+                            {/* <span className={styles.brandName}>Walnetix</span> */}
                         </div>
                         <p>Empowering Saudi SMEs with automation.</p>
                     </div>
