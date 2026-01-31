@@ -12,8 +12,8 @@ export default function Footer() {
                             <Image
                                 src="/Logo.png"
                                 alt="Walnetix Logo"
-                                width={120}
-                                height={35}
+                                width={230}
+                                height={135}
                                 style={{ height: 'auto', width: 'auto' }}
                             />
                             {/* <span className={styles.brandName}>Walnetix</span> */}
