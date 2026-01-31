@@ -23,11 +23,11 @@ export default function Navbar() {
                 <Link href="/" className={styles.logo}>
                     <Image
                         src="/Logo.png"
-                        alt="Walnetix Logo"
-                        width={140}
-                        height={40}
+                        alt="Walnetix"
+                        width={180}
+                        height={50}
                         priority
-                        style={{ height: 'auto', width: 'auto', maxHeight: '40px' }}
+                        style={{ height: 'auto', width: 'auto', maxHeight: '80px' }}
                     />
                     <span className={styles.logoText}>Walnetix</span>
                 </Link>
