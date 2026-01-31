@@ -82,7 +82,7 @@ export function generateLocalBusinessSchema() {
         image: `${siteConfig.url}/images/logo.png`,
         description: 'AI-powered business automation solutions for Saudi SMEs',
         url: siteConfig.url,
-        telephone: '+966-XXX-XXX-XXXX', // TODO: Add phone
+        telephone: '+966-558736888', // TODO: Add phone
         priceRange: '$$',
         address: {
             '@type': 'PostalAddress',
@@ -104,7 +104,7 @@ export function generateLocalBusinessSchema() {
                 closes: '18:00',
             },
         ],
-        areaServed: ['Riyadh', 'Jeddah', 'Dammam', 'Saudi Arabia'],
+        areaServed: ['Riyadh', 'Jeddah', 'Dammam', 'Saudi Arabia', 'worldwide'],
     };
 }
 
