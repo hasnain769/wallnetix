@@ -7,9 +7,9 @@ import { generateServiceListSchema, generateBreadcrumbSchema } from '@/lib/struc
 import styles from './services.module.css';
 
 export const metadata: Metadata = generateMetadata({
-    title: 'Our Services',
-    description: 'AI Strategy, Business Automation, WhatsApp Integration, SEO, and more. Comprehensive automation solutions tailored for Saudi SMEs to boost efficiency and growth.',
-    keywords: ['AI strategy Saudi Arabia', 'business automation services', 'WhatsApp business bot', 'SEO services Riyadh'],
+    title: 'Services',
+    description: 'AI Strategy, Business Automation, WhatsApp Integration, SEO, and more. Comprehensive automation solutions tailored for global enterprises to boost efficiency and growth.',
+    keywords: ['AI strategy', 'business automation services', 'WhatsApp business bot', 'SEO services', 'enterprise solutions'],
     canonical: generateCanonicalUrl('/services'),
 });
 

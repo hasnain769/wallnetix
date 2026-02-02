@@ -7,8 +7,8 @@ import styles from './contact.module.css';
 
 export const metadata: Metadata = generateMetadata({
     title: 'Contact Us',
-    description: 'Get a free consultation to automate your Saudi business. Fill out our form and our team will show you how to streamline your operations with AI.',
-    keywords: ['free consultation Saudi', 'business automation consultation', 'contact Walnetix'],
+    description: 'Get a free consultation to automate your business. Fill out our form and our team will show you how to streamline your operations with AI.',
+    keywords: ['free consultation', 'business automation consultation', 'contact Walnetix'],
     canonical: generateCanonicalUrl('/contact'),
 });
 
@@ -23,7 +23,7 @@ export default function Contact() {
         '@context': 'https://schema.org',
         '@type': 'ContactPage',
         name: 'Contact Walnetix',
-        description: 'Get a free consultation for business automation in Saudi Arabia',
+        description: 'Get a free consultation for business automation solutions',
         url: generateCanonicalUrl('/contact'),
         mainEntity: {
             '@type': 'Organization',

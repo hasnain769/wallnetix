@@ -2,23 +2,23 @@ import { Metadata } from 'next';
 
 export const siteConfig = {
     name: 'Walnetix',
-    title: 'Walnetix - AI LABs for Saudi SMEs',
-    description: 'Automate Your Busy Work. Grow Your Business. Leading software development company for Saudi SMEs building intelligent automation systems.',
+    title: 'Walnetix - Intelligent Automation for Global Businesses',
+    description: 'Automate Your Busy Work. Grow Your Business. Leading software development company for global enterprises building intelligent automation systems.',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://walnetix.com',
     ogImage: '/images/og-image.jpg',
     locale: 'en_US',
-    localeAlt: 'ar_SA', // Arabic alternate
+    // localeAlt: 'ar_SA', // Arabic alternate - removed for global initial rollout, can be re-added later if needed
     keywords: [
-        'business automation Saudi Arabia',
-        'SME automation solutions',
+        'business automation',
+        'enterprise software solutions',
         'WhatsApp booking bot',
-        'Saudi business software',
-        'AI for Saudi businesses',
-        'automation Riyadh',
-        'automation Jeddah',
-        'Vision 2030 technology',
+        'global business software',
+        'AI for enterprises',
+        'automation worldwide',
+        'intelligent tech solutions',
+        'digital transformation',
         'customer management software',
-        'inventory management Saudi',
+        'inventory management',
     ],
 };
 
@@ -65,7 +65,7 @@ export function generateMetadata({
         openGraph: {
             type: 'website',
             locale: siteConfig.locale,
-            alternateLocale: [siteConfig.localeAlt],
+            alternateLocale: [], // siteConfig.localeAlt removed
             url: canonical || siteConfig.url,
             title: pageTitle,
             description,

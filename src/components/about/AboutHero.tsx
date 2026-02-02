@@ -23,8 +23,8 @@ export default function AboutHero() {
                     Who We Are
                 </div>
                 <h1 className={styles.title}>
-                    Helping Saudi SMEs <br />
-                    <span className={styles.highlight}>Thrive in Vision 2030</span>
+                    Helping Businesses <br />
+                    <span className={styles.highlight}>Thrive in the Digital Age</span>
                 </h1>
                 <p className={styles.subtitle}>
                     We believe local businesses are the backbone of growth. We are Walnetix—the architects of intelligent automation for the modern era.

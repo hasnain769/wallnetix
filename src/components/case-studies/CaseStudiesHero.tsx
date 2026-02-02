@@ -43,7 +43,7 @@ export default function CaseStudiesHero() {
                     Our <span className={styles.highlight}>Case Studies</span>
                 </h1>
                 <p className={styles.subtitle}>
-                    Real results from Saudi businesses powered by intelligent automation
+                    Real results from global businesses powered by intelligent automation
                 </p>
             </div>
         </div>

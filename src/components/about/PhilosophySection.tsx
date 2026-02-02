@@ -33,13 +33,13 @@ export default function PhilosophySection() {
         },
         {
             icon: Heart,
-            title: "Local Focus",
-            description: "Designed specifically for the Saudi market, understanding cultural nuances and local business needs."
+            title: "Global Focus",
+            description: "Designed for modern enterprises, understanding complex business needs and scaling requirements."
         },
         {
             icon: Zap,
             title: "Future-Proof",
-            description: " Leveraging cutting-edge AI to ensure your business stays ahead of the curve in a rapidly evolving digital landscape."
+            description: "Leveraging cutting-edge AI to ensure your business stays ahead of the curve in a rapidly evolving digital landscape."
         }
     ];
 

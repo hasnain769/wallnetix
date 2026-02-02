@@ -1,5 +1,5 @@
 "use client";
-import { Lightbulb, Cpu, Handshake, TrendingUp, Share2, BarChart3 } from 'lucide-react';
+import { Lightbulb, Cpu, Handshake, TrendingUp, Share2, BarChart3, Cloud } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import styles from './ServicesSection.module.css';
 
@@ -31,9 +31,9 @@ export default function ServicesSection({ showTitle = true }: { showTitle?: bool
             description: 'We design and implement intelligent workflows that adapt to your business needs, enhancing productivity and decision-making.'
         },
         {
-            icon: BarChart3,
-            title: 'Predictive Business Intelligence',
-            description: 'Leverage AI to analyze data patterns and predict future trends, empowering informed decision-making.'
+            icon: Cloud,
+            title: 'End to End SAAS development',
+            description: 'From concept to deployment, we build scalable, secure, and user-centric SaaS platforms tailored to your market needs.'
         }
     ];
 

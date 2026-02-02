@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Footer.module.css';
+import { siteContent } from '@/data/site-content';
 
 export default function Footer() {
     return (
@@ -18,7 +19,7 @@ export default function Footer() {
                             />
                             {/* <span className={styles.brandName}>Walnetix</span> */}
                         </div>
-                        <p>Empowering Saudi SMEs with automation.</p>
+                        <p>{siteContent.global.tagline}</p>
                     </div>
                     <div className={styles.links}>
                         <Link href="/">Home</Link>

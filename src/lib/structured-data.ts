@@ -15,19 +15,15 @@ export function generateOrganizationSchema() {
         description: siteConfig.description,
         address: {
             '@type': 'PostalAddress',
-            addressCountry: 'SA',
-            addressRegion: 'Riyadh', // TODO: Update with actual region
-            addressLocality: 'Riyadh', // TODO: Update with actual city
-            // streetAddress: 'TODO: Add street address',
-            // postalCode: 'TODO: Add postal code',
+            addressCountry: 'US', // Defaulting to US or International for now
+            // addressRegion: 'NY', 
+            // addressLocality: 'New York',
         },
         contactPoint: {
             '@type': 'ContactPoint',
             contactType: 'Customer Service',
-            // telephone: '+966-XXX-XXX-XXXX', // TODO: Add phone
-            // email: 'info@walnetix.com', // TODO: Add email
-            availableLanguage: ['English', 'Arabic'],
-            areaServed: 'SA',
+            availableLanguage: ['English'],
+            areaServed: 'World',
         },
         sameAs: [
             // TODO: Add actual social media profiles
@@ -35,10 +31,10 @@ export function generateOrganizationSchema() {
             // 'https://twitter.com/walnetix',
             // 'https://www.facebook.com/walnetix',
         ],
-        foundingDate: '2024', // TODO: Update with actual founding year
+        foundingDate: '2024',
         areaServed: {
             '@type': 'Country',
-            name: 'Saudi Arabia',
+            name: 'Worldwide',
         },
     };
 }
@@ -80,31 +76,30 @@ export function generateLocalBusinessSchema() {
         '@id': `${siteConfig.url}/#localbusiness`,
         name: 'Walnetix',
         image: `${siteConfig.url}/images/logo.png`,
-        description: 'AI-powered business automation solutions for Saudi SMEs',
+        description: 'AI-powered business automation solutions for global enterprises',
         url: siteConfig.url,
-        telephone: '+966-558736888', // TODO: Add phone
+        // telephone: '+1-XXX-XXX-XXXX',
         priceRange: '$$',
         address: {
             '@type': 'PostalAddress',
-            addressCountry: 'SA',
-            addressRegion: 'Riyadh Province',
-            addressLocality: 'Riyadh',
-            // streetAddress: 'TODO',
+            addressCountry: 'US',
+            // addressRegion: 'NY',
+            // addressLocality: 'New York',
         },
-        geo: {
-            '@type': 'GeoCoordinates',
-            latitude: 24.7136, // Riyadh center - TODO: Update with actual location
-            longitude: 46.6753,
-        },
+        // geo: {
+        //     '@type': 'GeoCoordinates',
+        //     latitude: 40.7128,
+        //     longitude: -74.0060,
+        // },
         openingHoursSpecification: [
             {
                 '@type': 'OpeningHoursSpecification',
-                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Sunday'],
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
                 opens: '09:00',
                 closes: '18:00',
             },
         ],
-        areaServed: ['Riyadh', 'Jeddah', 'Dammam', 'Saudi Arabia', 'worldwide'],
+        areaServed: ['Worldwide'],
     };
 }
 
@@ -129,7 +124,7 @@ export function generateServiceSchema(service: {
         },
         areaServed: {
             '@type': 'Country',
-            name: 'Saudi Arabia',
+            name: 'Worldwide',
         },
         serviceType: service.name,
         url: service.url,
@@ -144,7 +139,7 @@ export function generateServiceListSchema() {
     const services = [
         {
             name: 'AI Strategy & Consulting',
-            description: 'Strategic AI implementation consulting for Saudi businesses',
+            description: 'Strategic AI implementation consulting for global businesses',
             url: `${siteConfig.url}/services#ai-strategy`,
         },
         {
@@ -173,7 +168,7 @@ export function generateServiceListSchema() {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: 'Walnetix Services',
-        description: 'Comprehensive business automation services for Saudi SMEs',
+        description: 'Comprehensive business automation services for global enterprises',
         itemListElement: services.map((service, index) => ({
             '@type': 'ListItem',
             position: index + 1,
@@ -209,11 +204,11 @@ export function generateProductSchema(product: {
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
             price: '0',
-            priceCurrency: 'SAR',
+            priceCurrency: 'USD',
             priceSpecification: {
                 '@type': 'UnitPriceSpecification',
                 price: '0',
-                priceCurrency: 'SAR',
+                priceCurrency: 'USD',
             },
         },
         provider: {

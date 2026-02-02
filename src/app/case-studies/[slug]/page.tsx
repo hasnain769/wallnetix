@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title: study.title,
         description: study.excerpt,
-        keywords: ['case study', 'Saudi SME success', 'business automation', study.title],
+        keywords: ['case study', 'enterprise success', 'business automation', study.title],
         alternates: {
             canonical: canonicalUrl,
         },

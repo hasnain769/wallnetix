@@ -10,8 +10,8 @@ import { generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/lib/str
 
 export const metadata: Metadata = generateMetadata({
     title: 'About Us',
-    description: 'Helping Saudi SMEs Thrive in Vision 2030. Walnetix provides cutting-edge AI and automation solutions to transform local businesses across Riyadh, Jeddah, and Dammam.',
-    keywords: ['Vision 2030 technology', 'Saudi AI company', 'business transformation Saudi Arabia'],
+    description: 'Helping businesses thrive through digital transformation. Walnetix provides cutting-edge AI and automation solutions to transform enterprises worldwide.',
+    keywords: ['business transformation', 'AI company', 'enterprise automation solutions'],
     canonical: generateCanonicalUrl('/about'),
 });
 
@@ -56,7 +56,7 @@ export default function About() {
                             color: 'var(--color-text-light)',
                             fontSize: '1.2rem'
                         }}>
-                            Join hundreds of Saudi business owners who are automating their way to growth.
+                            Join hundreds of business owners who are automating their way to growth.
                         </p>
                         <Button href="/contact" variant="primary">
                             Get Started Today

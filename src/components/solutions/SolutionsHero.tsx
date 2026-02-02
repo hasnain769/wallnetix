@@ -37,11 +37,11 @@ export default function SolutionsHero() {
                     <span className={styles.word}>Practical</span>{' '}
                     <span className={styles.word}>Solutions</span>{' '}
                     <span className={styles.word}>for</span>{' '}
-                    <span className={styles.wordHighlight}>Local</span>{' '}
-                    <span className={styles.wordHighlight}>Businesses</span>
+                    <span className={styles.wordHighlight}>Global</span>{' '}
+                    <span className={styles.wordHighlight}>Enterprises</span>
                 </h1>
                 <p className={styles.subtitle}>
-                    Streamline your operations with intelligent automation designed for Saudi SMEs
+                    Streamline your operations with intelligent automation designed for growing businesses
                 </p>
             </div>
         </div>

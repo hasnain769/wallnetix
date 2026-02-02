@@ -8,8 +8,8 @@ import styles from './solutions.module.css';
 
 export const metadata: Metadata = generateMetadata({
     title: 'Our Solutions',
-    description: 'Practical automation tools for Saudi businesses: WhatsApp Booking Bots, Customer Organization Systems, and Inventory Sync. Transform your operations today.',
-    keywords: ['WhatsApp booking bot Saudi', 'customer management Saudi', 'inventory sync Salla Zid', 'business automation tools'],
+    description: 'Practical automation tools for global businesses: WhatsApp Booking Bots, Customer Organization Systems, and Inventory Sync. Transform your operations today.',
+    keywords: ['WhatsApp booking bot', 'customer management system', 'inventory sync', 'business automation tools', 'enterprise automation'],
     canonical: generateCanonicalUrl('/solutions'),
 });
 
@@ -30,7 +30,7 @@ export default function Solutions() {
         },
         {
             title: 'Inventory & Sales Sync',
-            description: 'For retailers: Automatically update your stock levels when a sale happens online or in-store. Integrates seamlessly with Salla and Zid.',
+            description: 'For retailers: Automatically update your stock levels when a sale happens online or in-store. Integrates seamlessly with Shopify, WooCommerce, and Magento.',
             imageSrc: '/images/inventory.png',
             imageAlt: 'Inventory Management on Laptop',
         },

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: siteConfig.locale,
-    alternateLocale: [siteConfig.localeAlt],
+    alternateLocale: [], // siteConfig.localeAlt removed
     url: siteConfig.url,
     title: siteConfig.title,
     description: siteConfig.description,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Walnetix - Business Automation for Saudi SMEs',
+        alt: 'Walnetix - Business Automation',
       },
     ],
   },
@@ -81,10 +81,6 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0066cc" />
         <link rel="apple-touch-icon" href="/images/icon-192.png" />
-
-        {/* Geo targeting for Saudi Arabia */}
-        <meta name="geo.region" content="SA" />
-        <meta name="geo.placename" content="Riyadh" />
 
         {/* Structured Data */}
         <StructuredData

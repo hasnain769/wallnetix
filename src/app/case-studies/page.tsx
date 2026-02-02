@@ -9,8 +9,8 @@ import styles from './case-studies.module.css';
 
 export const metadata: Metadata = generateMetadata({
     title: 'Case Studies',
-    description: 'See how Saudi SMEs are growing with Walnetix automation. Real success stories from businesses in Riyadh, Jeddah, and Dammam.',
-    keywords: ['Saudi business success stories', 'automation case studies', 'SME transformation Saudi Arabia'],
+    description: 'See how businesses are growing with Walnetix automation. Real success stories from enterprises worldwide.',
+    keywords: ['business success stories', 'automation case studies', 'digital transformation cases'],
     canonical: generateCanonicalUrl('/case-studies'),
 });
 
@@ -27,7 +27,7 @@ export default function CaseStudies() {
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         name: 'Walnetix Case Studies',
-        description: 'Success stories from Saudi SMEs using Walnetix automation solutions',
+        description: 'Success stories from global enterprises using Walnetix automation solutions',
         url: generateCanonicalUrl('/case-studies'),
         mainEntity: {
             '@type': 'ItemList',

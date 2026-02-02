@@ -10,10 +10,12 @@ import { generateMetadata, generateCanonicalUrl } from '@/lib/seo-config';
 import { generateServiceListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/structured-data';
 import { getAllFAQs } from '@/lib/faq-data';
 
+import { siteContent } from '@/data/site-content';
+
 export const metadata: Metadata = generateMetadata({
-  title: 'Walnetix - AI LABs for Saudi SMEs',
-  description: 'Automate Your Busy Work. Grow Your Business. Leading software development company for Saudi SMEs building intelligent automation systems for bookings, inventory, and customer management.',
-  keywords: ['business automation Saudi Arabia', 'AI automation Riyadh', 'WhatsApp booking bot', 'SME automation solutions'],
+  title: siteContent.seo.defaultTitle,
+  description: siteContent.seo.defaultDescription,
+  keywords: siteContent.seo.keywords,
   canonical: generateCanonicalUrl('/'),
 });
 

@@ -29,7 +29,7 @@ export default function ResearchSection() {
         {
             icon: Microscope,
             title: "R&D Labs",
-            description: "Exploring next-gen LLM architectures optimized for Arabic dialects and business context."
+            description: "Exploring next-gen LLM architectures optimized for multilingual logic and business context."
         },
         {
             icon: BrainCircuit,
@@ -39,7 +39,7 @@ export default function ResearchSection() {
         {
             icon: Rocket,
             title: "Innovation Hub",
-            description: "Partnering with Saudi universities to foster local AI talent and breakthrough technologies."
+            description: "Partnering with leading universities to foster AI talent and breakthrough technologies."
         }
     ];
 

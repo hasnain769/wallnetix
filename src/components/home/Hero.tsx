@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Button from '../common/Button';
 import styles from './Hero.module.css';
+import { siteContent } from '@/data/site-content';
 
 export default function Hero() {
     const [isAnimating, setIsAnimating] = useState(false);
@@ -154,22 +155,22 @@ export default function Hero() {
                 {/* Text content - only hides on large screens */}
                 <div className={`${styles.content} ${shouldHideContent ? styles.contentHidden : ''}`}>
                     <h1 className={styles.headline}>
-                        More Sales. Less Admin. <br />
-                        <span className={styles.highlight}>24/7.</span>
+                        {siteContent.hero.headline} <br />
+                        <span className={styles.highlight}>{siteContent.hero.highlight}</span>
                     </h1>
                     <p className={styles.subheadline}>
-                        The leading software development company for Saudi SMEs. We build intelligent systems to handle bookings, inventory, and customer chats automatically.
+                        {siteContent.hero.subheadline}
                     </p>
                     <div className={styles.actions}>
                         <Button href="/contact" variant="primary" icon>
-                            Get a Free Consultation
+                            {siteContent.global.consultationCta}
                         </Button>
                         <Button href="/solutions" variant="brand-green">
-                            See How It Works
+                            {siteContent.global.worksCta}
                         </Button>
                     </div>
                     <p className={styles.trustText}>
-                        Trusted by growing businesses across Riyadh, Jeddah, and Dammam.
+                        {siteContent.global.trustText}
                     </p>
                 </div>
 
