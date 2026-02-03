@@ -17,9 +17,17 @@ export const siteConfig = {
         'automation worldwide',
         'intelligent tech solutions',
         'digital transformation',
-        'customer management software',
         'inventory management',
     ],
+    icons: {
+        icon: '/favicon.ico',
+        shortcut: '/favicon.ico',
+        apple: '/images/icon-192.png',
+        other: {
+            rel: 'apple-touch-icon-precomposed',
+            url: '/images/icon-192.png',
+        },
+    },
 };
 
 export interface PageSEO {

@@ -18,7 +18,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className={styles.navbar}>
+        <nav className={styles.navbar} aria-label="Main navigation">
             <div className={styles.container}>
                 <Link href="/" className={styles.logo}>
                     <Image
@@ -27,7 +27,7 @@ export default function Navbar() {
                         width={210}
                         height={110}
                         priority
-                        // style={{ height: 'auto', width: 'auto', maxHeight: '60px' }}
+                    // style={{ height: 'auto', width: 'auto', maxHeight: '60px' }}
                     />
                     {/* <span className={styles.logoText}>Walnetix</span> */}
                 </Link>

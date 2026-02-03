@@ -15,21 +15,24 @@ export function generateOrganizationSchema() {
         description: siteConfig.description,
         address: {
             '@type': 'PostalAddress',
-            addressCountry: 'US', // Defaulting to US or International for now
-            // addressRegion: 'NY', 
-            // addressLocality: 'New York',
+            streetAddress: 'AL nasr road, Al masani district',
+            addressLocality: 'Riyadh',
+            postalCode: '14714',
+            addressCountry: 'SA',
         },
         contactPoint: {
             '@type': 'ContactPoint',
+            telephone: '+966-55-873-6888',
             contactType: 'Customer Service',
-            availableLanguage: ['English'],
+            email: 'Contact@walnetix.com',
+            availableLanguage: ['English', 'Arabic'],
             areaServed: 'World',
         },
         sameAs: [
-            // TODO: Add actual social media profiles
-            // 'https://www.linkedin.com/company/walnetix',
-            // 'https://twitter.com/walnetix',
-            // 'https://www.facebook.com/walnetix',
+            'https://www.linkedin.com/company/walnetix/',
+            'https://www.instagram.com/walnetix',
+            'https://www.tiktok.com/@walnetix',
+            'https://www.facebook.com/Walnetix/',
         ],
         foundingDate: '2024',
         areaServed: {
@@ -78,23 +81,24 @@ export function generateLocalBusinessSchema() {
         image: `${siteConfig.url}/images/logo.png`,
         description: 'AI-powered business automation solutions for global enterprises',
         url: siteConfig.url,
-        // telephone: '+1-XXX-XXX-XXXX',
+        telephone: '+966-55-873-6888',
         priceRange: '$$',
         address: {
             '@type': 'PostalAddress',
-            addressCountry: 'US',
-            // addressRegion: 'NY',
-            // addressLocality: 'New York',
+            streetAddress: 'AL nasr road, Al masani district',
+            addressLocality: 'Riyadh',
+            postalCode: '14714',
+            addressCountry: 'SA',
         },
-        // geo: {
-        //     '@type': 'GeoCoordinates',
-        //     latitude: 40.7128,
-        //     longitude: -74.0060,
-        // },
+        geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 24.57736445987006,
+            longitude: 46.73979325434708,
+        },
         openingHoursSpecification: [
             {
                 '@type': 'OpeningHoursSpecification',
-                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
                 opens: '09:00',
                 closes: '18:00',
             },

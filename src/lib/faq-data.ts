@@ -27,6 +27,11 @@ export const faqs: FAQ[] = [
         answer: 'Walnetix integrates seamlessly with popular global e-commerce platforms including Shopify, WooCommerce, Magento, and others. Our Inventory & Sales Sync solution automatically updates stock levels when sales happen online or in-store, preventing overselling and keeping all your channels in sync.',
         category: 'solutions',
     },
+    {
+        question: 'Can Walnetix build end-to-end SaaS products?',
+        answer: 'Absolutely. We specialize in full-cycle SaaS development, taking your product from initial concept to launch. Our team handles everything including system architecture, UI/UX design, frontend and backend development, and cloud infrastructure setup, ensuring you get a scalable, market-ready software product.',
+        category: 'services',
+    },
     // Pricing & Getting Started
     {
         question: 'How much does business automation cost?',
