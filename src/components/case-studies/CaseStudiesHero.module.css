@@ -4,7 +4,7 @@
     text-align: center;
     overflow: hidden;
     background: url('/images/casestudies-hero-bg.png');
-    background-size: cover;
+    background-size: 120%;
     background-position: center center;
 }
 
