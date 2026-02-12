@@ -1,0 +1,29 @@
+.main {
+    min-height: 100vh;
+    background-color: #FFFFFF;
+}
+
+.portfolio {
+    padding: 60px 20px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .portfolio {
+        padding: 80px 40px 120px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+    }
+}
