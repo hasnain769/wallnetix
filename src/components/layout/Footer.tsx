@@ -42,7 +42,7 @@ export default function Footer() {
                             <div className={styles.contactItem}>
                                 <MapPin size={18} className={styles.icon} />
                                 <span>
-                                    AL nasr road, Al masani district<br />
+                                    AN nasr road, Al masani district<br />
                                     Riyadh 14714, Saudi Arabia
                                 </span>
                             </div>

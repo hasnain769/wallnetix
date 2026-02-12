@@ -42,11 +42,7 @@ export default function PortfolioDetail({ item }: PortfolioDetailProps) {
         overview = overviewHeaderMatch[1].trim();
     }
 
-    // Parse tech stack items
-    const techItems = item.tech
-        .split('\n')
-        .filter(line => line.trim().startsWith('-'))
-        .map(line => line.replace(/^-\s*/, '').trim());
+
 
     // Parse features
     const featureItems = item.features
@@ -144,26 +140,7 @@ export default function PortfolioDetail({ item }: PortfolioDetailProps) {
                     </section>
                 )}
 
-                {/* Tech Stack */}
-                {techItems.length > 0 && (
-                    <section className={styles.section}>
-                        <h2 className={styles.sectionTitle}>Tech Stack</h2>
-                        <div className={styles.techGrid}>
-                            {techItems.map((tech, idx) => {
-                                const match = tech.match(/\*\*(.+?)\*\*:\s*(.+)/);
-                                if (match) {
-                                    return (
-                                        <div key={idx} className={styles.techItem}>
-                                            <strong>{match[1]}</strong>
-                                            <span>{match[2]}</span>
-                                        </div>
-                                    );
-                                }
-                                return null;
-                            })}
-                        </div>
-                    </section>
-                )}
+
 
                 {/* Key Features */}
                 {featureItems.length > 0 && (
