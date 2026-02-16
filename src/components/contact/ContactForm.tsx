@@ -18,27 +18,27 @@ export default function ContactForm() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeIii2cKqEA-7XQXRGzueFbN_oDImaYV8Eyj4pxc39VgpZz0g/formResponse";
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('submitting');
 
-        const formBody = new FormData();
-        formBody.append("entry.726426446", formData.name);
-        formBody.append("entry.1114450537", formData.company);
-        formBody.append("entry.1587992224", formData.email);
-        formBody.append("entry.571810333", formData.phone);
-        formBody.append("entry.1977617901", formData.message);
-
         try {
-            await fetch(GOOGLE_FORM_ACTION_URL, {
-                method: "POST",
-                body: formBody,
-                mode: "no-cors"
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             });
-            setStatus('success');
-            setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+            } else {
+                throw new Error(data.error || 'Submission failed');
+            }
         } catch (error) {
             console.error("Submission error:", error);
             setStatus('error');
