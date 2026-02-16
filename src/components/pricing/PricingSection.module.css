@@ -1,0 +1,63 @@
+.section {
+    padding: 0 0 100px;
+    background-color: var(--color-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.toggleWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.toggle {
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 40px;
+    display: inline-flex;
+    gap: 4px;
+    position: relative;
+}
+
+.toggleBtn {
+    padding: 12px 32px;
+    border-radius: 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.active {
+    background: #fff;
+    color: var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.infoText {
+    text-align: center;
+    color: var(--color-text-light);
+    margin-bottom: 48px;
+    font-size: 1.1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    align-items: center;
+    /* Center vertically if heights differ slightly */
+}
+
+/* Ensure Custom Package doesn't look weird if it wraps */
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

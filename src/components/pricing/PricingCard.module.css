@@ -1,0 +1,139 @@
+.card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    height: 100%;
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.highlight {
+    border: 2px solid var(--color-brand-cyan);
+    box-shadow: var(--shadow-md);
+    transform: scale(1.02);
+}
+
+.highlight:hover {
+    transform: scale(1.04) translateY(-5px);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-brand-cyan);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.priceContainer {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+}
+
+.period {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-top: 4px;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 24px;
+    line-height: 1.5;
+    text-align: center;
+    min-height: 60px;
+    /* Align checkmarks */
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex: 1;
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.checkIcon {
+    color: var(--color-brand-green);
+    min-width: 18px;
+    margin-top: 2px;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+/* Specific button override for pricing consistency */
+.ctaButton {
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .highlight {
+        transform: scale(1);
+    }
+}

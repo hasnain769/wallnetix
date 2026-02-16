@@ -52,3 +52,21 @@
 .button:hover .icon {
     transform: translateX(4px);
 }
+
+.outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid #e2e8f0;
+    box-shadow: none;
+}
+
+.outline:hover {
+    border-color: var(--color-primary);
+    background-color: #f8fafc;
+    transform: translateY(-1px);
+}
+
+.fullWidth {
+    width: 100%;
+    display: flex;
+}

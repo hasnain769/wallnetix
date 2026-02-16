@@ -5,9 +5,10 @@ import styles from './Button.module.css';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
     href?: string;
-    variant?: 'primary' | 'secondary' | 'brand-green';
+    variant?: 'primary' | 'secondary' | 'brand-green' | 'outline';
     className?: string;
     icon?: boolean;
+    fullWidth?: boolean;
 }
 
 export default function Button({
@@ -16,6 +17,7 @@ export default function Button({
     variant = 'primary',
     className = '',
     icon = false,
+    fullWidth = false,
     ...props
 }: ButtonProps) {
     const Component = href ? Link : 'button';
@@ -25,7 +27,7 @@ export default function Button({
     return (
         // @ts-ignore
         <Component
-            className={`${styles.button} ${styles[variant]} ${className}`}
+            className={`${styles.button} ${styles[variant]} ${fullWidth ? styles.fullWidth : ''} ${className}`}
             {...componentProps}
         >
             {children}
