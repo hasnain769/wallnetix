@@ -17,7 +17,7 @@ export const developmentPackages: PricingPackage[] = [
         id: 'launchpad',
         title: 'LaunchPad Package',
         subtitle: 'Website & MVP Development',
-        price: '$800 – $1,500',
+        price: '$499 – $999',
         period: 'One-Time Project Fee',
         description: 'Ideal for startups, entrepreneurs, and small businesses needing a professional launch or to validate a new concept.',
         perfectFor: 'Startups, Entrepreneurs, Small Businesses',
@@ -36,28 +36,11 @@ export const developmentPackages: PricingPackage[] = [
         id: 'growth-retainer',
         title: 'Growth Retainer',
         subtitle: 'Continuous Development',
-        price: '$1,000 – $2,500', // Adjusted based on "Growth Retainer" generally being higher, but sticking to user request order. User request didn't specify price for #2, implied purely hourly/retainer. Wait, user request for #3 is $1k-2.5k. #2 has no price listed in prompt? Ah, "Growth Retainer" in prompt has no price listed directly under it, but "Partner Retainer" does. Let me re-read carefully.
-        // Re-reading user prompt:
-        // 1. LaunchPad: $800-1500
-        // 2. Growth Retainer: ... (No price explicitly stated in text block, but maybe it's the $1000-$2500? No, that's under Partner Retainer).
-        // Actually, looking at the layout, typically Retainers have a price.
-        // Let's assume user missed it or it falls in a similar range. I'll use "Contact for Quote" if uncertain, OR I will assume a standard range based on typical 10 hrs.
-        // 10 hours * $50-$100/hr = $500-$1000/mo.
-        // Let's look at the Partner Retainer ($1000-$2500).
-        // I will set Growth Retainer to "Starting at $500/mo" or similar if not found.
-        // WAIT, looking closer at the prompt text structure.
-        // "3. Partner Retainer... $1,000 – $2,500"
-        // "2. Growth Retainer... " -> Missing price line?
-        // Let's use a placeholder or generic "Custom" for #2 if not sure, but "Service: Up to 10 dedicated development hours". 10 hours is small.
-        // I will set it to "$500 – $800" estimate or just "Starting at $500/mo" to be safe, or leave as negotiable.
-        // ACTUALLY, I will infer from "10 dedicated hours" vs "Partner (Reserved block)".
-        // I'll put "$500 - $900" for Growth Retainer as a reasonable estimate for 10 devs hours, or generic.
-        // Let's just use "Contact for Pricing" for Growth to be safe, or "$500" Base.
-        // I'll stick to "$499 / mo" as a psychological price point for 10 hours (approx $50/hr).
-        period: 'Monthly Retainer',
+        price: '$1,500 + $200–$400',
+        period: 'Setup + Monthly Retainer',
         description: 'Ideal for businesses ready to iterate, scale, and optimize their product after the initial launch.',
         features: [
-            'Up to 10 Dedicated Dev Hours/Month',
+            'Up to 30 Dedicated Dev Hours/Month',
             'Monthly Performance Reviews',
             'Proactive Bug Fixes',
             'Quarterly Roadmap & Strategy Meeting',
@@ -73,8 +56,8 @@ export const developmentPackages: PricingPackage[] = [
         id: 'partner-retainer',
         title: 'Partner Retainer',
         subtitle: 'Embedded Technical Partner',
-        price: '$1,000 – $2,500',
-        period: 'Monthly Retainer',
+        price: '$2,399 + $300–$500',
+        period: 'Setup + Monthly Retainer',
         description: 'Ideal for established businesses seeking a dedicated, long-term technology partner to drive growth and innovation.',
         features: [
             'Tailored Development Roadmap',
