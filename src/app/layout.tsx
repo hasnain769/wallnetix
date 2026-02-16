@@ -8,7 +8,16 @@ import { siteConfig } from "@/lib/seo-config";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
-const font = Plus_Jakarta_Sans({ subsets: ["latin"] });
+import { Viewport } from 'next';
+
+const font = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: 'swap',
+});
+
+export const viewport: Viewport = {
+  themeColor: '#0066cc',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -79,7 +88,6 @@ export default function RootLayout({
       <head>
         {/* PWA and Mobile SEO */}
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#0066cc" />
         <link rel="apple-touch-icon" href="/images/icon-192.png" />
 
         {/* Structured Data */}

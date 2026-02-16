@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Hero from '@/components/home/Hero';
-import TrustBar from '@/components/home/TrustBar';
-import Benefits from '@/components/home/Benefits';
-import ServicesSection from '@/components/services/ServicesSection';
-import HomeContact from '@/components/home/HomeContact';
-import FAQSection from '@/components/common/FAQSection';
+
+const TrustBar = dynamic(() => import('@/components/home/TrustBar'), { ssr: true });
+const Benefits = dynamic(() => import('@/components/home/Benefits'), { ssr: true });
+const ServicesSection = dynamic(() => import('@/components/services/ServicesSection'), { ssr: true });
+const HomeContact = dynamic(() => import('@/components/home/HomeContact'), { ssr: true });
+const FAQSection = dynamic(() => import('@/components/common/FAQSection'), { ssr: true });
 import StructuredData from '@/components/seo/StructuredData';
 import { generateMetadata, generateCanonicalUrl } from '@/lib/seo-config';
 import { generateServiceListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/structured-data';
