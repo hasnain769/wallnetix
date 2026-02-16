@@ -3,8 +3,11 @@ import { getAllCaseStudies } from '@/lib/caseStudies';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://walnetix.com';
 
+import { getAllPortfolio } from '@/lib/portfolio';
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const caseStudies = getAllCaseStudies();
+    const portfolioItems = getAllPortfolio();
 
     // Static pages
     const staticPages: MetadataRoute.Sitemap = [
@@ -33,6 +36,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${BASE_URL}/pricing`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${BASE_URL}/portfolio`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
             url: `${BASE_URL}/contact`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
@@ -54,5 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
     }));
 
-    return [...staticPages, ...caseStudyPages];
+    // Dynamic portfolio pages
+    const portfolioPages: MetadataRoute.Sitemap = portfolioItems.map((item) => ({
+        url: `${BASE_URL}/portfolio/${item.slug}`,
+        lastModified: item.date ? new Date(item.date) : new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
+    return [...staticPages, ...caseStudyPages, ...portfolioPages];
 }
