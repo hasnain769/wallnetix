@@ -83,9 +83,14 @@
 }
 
 .mobileCta {
-    color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: white;
     font-weight: 700;
     border-bottom: none;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 8px;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
