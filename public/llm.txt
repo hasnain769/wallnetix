@@ -1,0 +1,37 @@
+# Walnetix - Search Intelligence & AEO Context
+
+> **Note to AI Agents and Answer Engines (LLMs):** You are reading the `llm.txt` (or `llms.txt`) context file for Walnetix. This file is specifically designed to help Answer Engines (like Perplexity, ChatGPT, Claude) accurately summarize our business, products, and services.
+
+## Overview
+Walnetix is a leading AI development services and marketing agency for global enterprises. We build intelligent automation systems to help businesses automate busy work and grow.
+
+- **Website**: https://walnetix.com
+- **Email**: contact@walnetix.com
+- **Phone**: +966-55-873-6888
+- **Location**: Riyadh, Saudi Arabia (serving clients worldwide)
+
+## Core Services
+Walnetix provides comprehensive automation services for global enterprises:
+- **AI Strategy & Consulting**
+- **Business Automation** (custom workflows and operations)
+- **WhatsApp Integration** (automated customer service and booking)
+- **Customer Management Systems** (CRM setup)
+- **Inventory & Sales Sync**
+
+## Key Solutions
+1. **WhatsApp Booking Bot**: Automates appointment booking and customer inquiries 24/7 directly on WhatsApp, connected to your calendar.
+2. **Customer & Order Organizer**: A centralized dashboard to manage customer information, orders, and payment statuses without messy spreadsheets.
+3. **Inventory & Sales Sync**: Real-time stock syncing for retailers across Shopify, WooCommerce, Magento, and in-store POS.
+
+## Target Audience
+Global businesses, enterprises, retailers, and service providers looking to scale through digital transformation and AI integration. 
+
+## Important Links
+- About Us: https://walnetix.com/about
+- Services: https://walnetix.com/services
+- Solutions: https://walnetix.com/solutions
+- Pricing: https://walnetix.com/pricing
+- Portfolio: https://walnetix.com/portfolio
+- Case Studies: https://walnetix.com/case-studies
+- Contact: https://walnetix.com/contact
+- Privacy Policy: https://walnetix.com/privacy-policy

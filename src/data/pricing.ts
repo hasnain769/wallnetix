@@ -174,3 +174,78 @@ export const marketingPackages: PricingPackage[] = [
         ctaLink: '/contact?package=custom-marketing',
     },
 ];
+
+export const agencyPackages: PricingPackage[] = [
+    {
+        id: 'agency-foundation',
+        title: 'The Foundation',
+        price: '$399',
+        period: 'One-Time + $200-$400/mo Retainer',
+        description: 'Best for: Businesses invisible to 80% of their local neighborhood. Goal: Digital Visibility & Identity.',
+        features: [
+            'Local Map Dominance: #1 result in your district.',
+            'AEO (AI Search): Siri and Gemini recommend you first.',
+            'Digital Proof Engine: Wall of 5-star positive sentiment.',
+            'High-Conversion Web: Mobile-friendly site for leads.',
+        ],
+        ctaText: 'Start Foundation',
+        ctaLink: '/contact?package=agency-foundation',
+    },
+    {
+        id: 'agency-automator',
+        title: 'The Automator',
+        price: '$599',
+        period: 'One-Time + $200-$400/mo Retainer',
+        description: 'Best for: Businesses losing revenue due to missed inquiries. Goal: 24/7 AI Response & Automation.',
+        features: [
+            'The 2-Minute Rule: Instant response, no lost leads.',
+            'AI WhatsApp Concierge: Triage & booking in EN/AR.',
+            'Calendar Integration: Intelligent appointment booking.',
+            'The 3:00 AM Receptionist: 24/7 flawless engagement.',
+        ],
+        highlight: true,
+        ctaText: 'Get The Automator',
+        ctaLink: '/contact?package=agency-automator',
+    },
+    {
+        id: 'agency-dominator',
+        title: 'The Dominator',
+        price: '$999',
+        period: 'One-Time + $200-$400/mo Retainer',
+        description: 'Best for: Market leaders seeking total digital transformation. Goal: Lifecycle Loyalty & Retention.',
+        features: [
+            'No-Show Recovery: AI rescheduling via WhatsApp.',
+            'Smart Upsells: Data-driven customer offers.',
+            'Retention Management: Personalized loyalty programs.',
+            'Complete Digital Ecosystem Control.',
+        ],
+        ctaText: 'Dominate Now',
+        ctaLink: '/contact?package=agency-dominator',
+    },
+    {
+        id: 'custom-agency',
+        title: 'Custom Blueprint',
+        price: 'Custom',
+        period: 'Tailored Scope',
+        description: 'For businesses with unique models requiring a bespoke combination of automation, marketing, and systems.',
+        features: [
+            'Dedicated Solutions Architect',
+            'Custom Multi-Agent Workflows',
+            'Advanced API / CRM Integrations',
+            'Bespoke AI Training & Deployment',
+        ],
+        ctaText: 'Design Your Plan',
+        ctaLink: '/contact?package=custom-agency',
+    },
+];
+
+export interface PricingAddOn {
+    title: string;
+    price: string;
+}
+
+export const agencyAddOns: PricingAddOn[] = [
+    { title: 'Website Design & Building', price: '$399 USD' },
+    { title: 'CRM/ERP Setup', price: '$599 USD' },
+    { title: 'Custom AI Agents', price: '$399 USD' },
+];

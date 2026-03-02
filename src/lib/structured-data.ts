@@ -296,3 +296,31 @@ export function generateArticleSchema(article: {
         },
     };
 }
+
+/**
+ * Schema.org AboutPage for about page
+ */
+export function generateAboutPageSchema() {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        name: 'About Walnetix',
+        description: 'Learn about Walnetix, a leading software development company for global enterprises.',
+        url: `${siteConfig.url}/about`,
+        mainEntity: generateOrganizationSchema(),
+    };
+}
+
+/**
+ * Schema.org ContactPage
+ */
+export function generateContactPageSchema() {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contact Walnetix',
+        description: 'Get in touch with Walnetix for AI strategy and business automation solutions.',
+        url: `${siteConfig.url}/contact`,
+        mainEntity: generateOrganizationSchema(),
+    };
+}

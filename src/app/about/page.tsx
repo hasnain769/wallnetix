@@ -6,7 +6,7 @@ import VisionSection from '@/components/about/VisionSection';
 import ResearchSection from '@/components/about/ResearchSection';
 import StructuredData from '@/components/seo/StructuredData';
 import { generateMetadata, generateCanonicalUrl } from '@/lib/seo-config';
-import { generateLocalBusinessSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
+import { generateLocalBusinessSchema, generateBreadcrumbSchema, generateAboutPageSchema } from '@/lib/structured-data';
 
 export const metadata: Metadata = generateMetadata({
     title: 'About Us',
@@ -27,6 +27,7 @@ export default function About() {
             <StructuredData
                 data={[
                     generateLocalBusinessSchema(),
+                    generateAboutPageSchema(),
                     generateBreadcrumbSchema(breadcrumbs),
                 ]}
             />

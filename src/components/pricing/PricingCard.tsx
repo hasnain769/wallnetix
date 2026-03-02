@@ -7,9 +7,11 @@ import styles from './PricingCard.module.css';
 interface PricingCardProps {
     pkg: PricingPackage;
     index: number;
+    currency: 'USD' | 'SAR';
+    formatPrice: (str: string, currency: 'USD' | 'SAR') => string;
 }
 
-export default function PricingCard({ pkg, index }: PricingCardProps) {
+export default function PricingCard({ pkg, index, currency, formatPrice }: PricingCardProps) {
     return (
         <div
             className={`${styles.card} ${pkg.highlight ? styles.highlight : ''}`}
@@ -23,8 +25,8 @@ export default function PricingCard({ pkg, index }: PricingCardProps) {
             </div>
 
             <div className={styles.priceContainer}>
-                <div className={styles.price}>{pkg.price}</div>
-                {pkg.period && <div className={styles.period}>{pkg.period}</div>}
+                <div className={styles.price}>{formatPrice(pkg.price, currency)}</div>
+                {pkg.period && <div className={styles.period}>{formatPrice(pkg.period, currency)}</div>}
             </div>
 
             <p className={styles.description}>{pkg.description}</p>

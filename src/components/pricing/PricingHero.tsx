@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import styles from './PricingHero.module.css';
 
 export default function PricingHero() {
@@ -26,13 +27,25 @@ export default function PricingHero() {
 
     return (
         <div ref={heroRef} className={styles.hero}>
+            <div className={styles.bgImageContainer}>
+                <Image
+                    src="/images/pricing-bg-light.png"
+                    alt="Pricing Background"
+                    fill
+                    className={styles.bgImage}
+                    priority
+                />
+            </div>
             <div className={styles.background}>
                 <div className={styles.gradientOrb1} />
                 <div className={styles.gradientOrb2} />
             </div>
 
             <div className={`${styles.content} ${isVisible ? styles.visible : ''}`}>
-                <span className={styles.eyebrow}>Transparent Pricing</span>
+                <div className={styles.badges}>
+                    <span className={styles.eyebrow}>Transparent Pricing</span>
+                    <span className={styles.trailBadge}>7 Days Free Trail</span>
+                </div>
                 <h1 className={styles.title}>
                     <span className={styles.word}>Invest</span>{' '}
                     <span className={styles.word}>in</span>{' '}

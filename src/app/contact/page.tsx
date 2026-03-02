@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import ContactForm from '@/components/contact/ContactForm';
 import StructuredData from '@/components/seo/StructuredData';
 import { generateMetadata, generateCanonicalUrl, siteConfig } from '@/lib/seo-config';
-import { generateBreadcrumbSchema } from '@/lib/structured-data';
+import { generateContactPageSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
 import styles from './contact.module.css';
 
 export const metadata: Metadata = generateMetadata({
@@ -18,25 +18,11 @@ export default function Contact() {
         { name: 'Contact Us', url: generateCanonicalUrl('/contact') },
     ];
 
-    // ContactPage schema
-    const contactPageSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'ContactPage',
-        name: 'Contact Walnetix',
-        description: 'Get a free consultation for business automation solutions',
-        url: generateCanonicalUrl('/contact'),
-        mainEntity: {
-            '@type': 'Organization',
-            name: 'Walnetix',
-            url: siteConfig.url,
-        },
-    };
-
     return (
         <>
             <StructuredData
                 data={[
-                    contactPageSchema,
+                    generateContactPageSchema(),
                     generateBreadcrumbSchema(breadcrumbs),
                 ]}
             />
